@@ -1,0 +1,5 @@
+﻿  GLUTCallbacks.cpp
+  HelloGL.cpp
+  main.cpp
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'freeglut.lib'
