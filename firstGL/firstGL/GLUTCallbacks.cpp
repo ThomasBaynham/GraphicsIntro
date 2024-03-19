@@ -16,7 +16,8 @@ namespace GLUTCallbacks
 
 	void Display()
 	{
-		if (helloGL != nullptr) {
+		if (helloGL != nullptr) 
+		{
 			helloGL->Display();
 		}
 	}

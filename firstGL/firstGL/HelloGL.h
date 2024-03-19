@@ -15,5 +15,19 @@ public:
 	void Display();
 
 	~HelloGL(void);
+
+	void DrawScaline();
+
+	void DrawIsosceles();
+
+	void DrawEqualatral();
+
+	void DrawAcute();
+
+	void DrawRight();
+
+	void DrawObtuse();
+
+
 };
 

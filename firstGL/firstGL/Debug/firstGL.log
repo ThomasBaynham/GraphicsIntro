@@ -1,5 +1,6 @@
-﻿  GLUTCallbacks.cpp
-  HelloGL.cpp
-  main.cpp
-  Generating Code...
-LINK : fatal error LNK1104: cannot open file 'freeglut.lib'
+﻿  HelloGL.cpp
+C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(38,20): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(38,14): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(50,15): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(51,14): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  firstGL.vcxproj -> C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe
