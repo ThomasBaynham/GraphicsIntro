@@ -14,10 +14,13 @@ void HelloGL::Display()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 
-
+	DrawScaline();
 	DrawIsosceles();
-	glFlush();
+	DrawEqualatral();
+	DrawRight();
+	DrawObtuse();
 
+	glFlush();
 
 
 }
@@ -33,9 +36,9 @@ void HelloGL::DrawScaline() {
 	glBegin(GL_POLYGON); 
 	{
 		glColor4f(1.0f, 0.0f, 0.0f, 0.0f);
-		glVertex2f(-0.75, 0.5);
-		glVertex2f(0.5, 0.5);
-		glVertex2f(0.6, -0.3);
+		glVertex2f(-1, 0.8);
+		glVertex2f(0.8, 0.9);
+		glVertex2f(0.2, -0.9);
 		glEnd();
 	}
 
@@ -45,32 +48,48 @@ void HelloGL::DrawIsosceles()
 {
 	glBegin(GL_POLYGON);
 	{
-		glColor4f(1.0f, 0.0f, 0.0f, 0.0f);
+		glColor4f(0.0f, 1.0f, 0.0f, 0.0f);
 		glVertex2f(0, 0.5);
-		glVertex2f(-0.4, -0.5);
-		glVertex2f(0.4, -0.5);
+		glVertex2f(-0.4, -0.7);
+		glVertex2f(0.4, -0.7);
 		glEnd();
 	}
 }
 
 void HelloGL::DrawEqualatral()
 {
-
-}
-
-void HelloGL::DrawAcute()
-{
-
+	glBegin(GL_POLYGON);
+	{
+		glColor4f(0.0f, 0.0f, 1.0f, 0.0f);
+		glVertex2f(0, -0.17);
+		glVertex2f(-0.5, 0.7);
+		glVertex2f(0.5, 0.7);
+		glEnd();
+	}
 }
 
 void HelloGL::DrawRight()
 {
-
+	glBegin(GL_POLYGON);
+	{
+		glColor4f(0.0f, 1.0f, 1.0f, 0.0f);
+		glVertex2f(0.5, 0);
+		glVertex2f(0.5, 0.5);
+		glVertex2f(0, 0.5);
+		glEnd();
+	}
 }
 
 void HelloGL::DrawObtuse()
 {
-
+	glBegin(GL_POLYGON);
+	{
+		glColor4f(1.0f, 1.0f, 0.0f, 0.0f);
+		glVertex2f(-0.9, -0.5);
+		glVertex2f(-0.8, -0.9);
+		glVertex2f(0.3, -0.9);
+		glEnd();
+	}
 }
 
 
