@@ -6,6 +6,7 @@ HelloGL::HelloGL(int argc, char* argv[])
 	glutInit(&argc, argv);
 	glutCreateWindow("OPENPL WOOOOOOOOOOOOOO");
 	glutDisplayFunc(GLUTCallbacks::Display);
+	glutTimerFunc(REFRESHRATE, GLUTCallbacks::Timer, REFRESHRATE);
 	glutMainLoop();
 	glutInitWindowSize(800,800);
 }
@@ -28,6 +29,12 @@ void HelloGL::Display()
 HelloGL::~HelloGL(void)
 {
 
+}
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+void HelloGL::Update()
+{
+	glutPostRedisplay();
 }
 
 

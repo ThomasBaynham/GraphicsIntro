@@ -5,6 +5,8 @@
 #include "GL\freeglut.h"
 #include "GLUTCallbacks.h"
 
+#define REFRESHRATE 16
+
 
 class HelloGL
 {
@@ -16,13 +18,13 @@ public:
 
 	~HelloGL(void);
 
+	void Update();
+
 	void DrawScaline();
 
 	void DrawIsosceles();
 
 	void DrawEqualatral();
-
-	void DrawAcute();
 
 	void DrawRight();
 
