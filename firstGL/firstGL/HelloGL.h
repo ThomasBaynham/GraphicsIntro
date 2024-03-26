@@ -30,6 +30,8 @@ public:
 
 	void DrawObtuse();
 
+private:
+	float rotation;
 
 };
 

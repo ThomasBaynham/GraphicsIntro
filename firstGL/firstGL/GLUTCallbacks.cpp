@@ -25,7 +25,7 @@ namespace GLUTCallbacks
 	void Timer(int preferredRefresh)
 	{
 		helloGL->Update();
-		glutTimerFunc(REFRESHRATE, GLUTCallbacks::Timer, REFRESHRATE);
+		glutTimerFunc(REFRESHRATE, GLUTCallbacks::Timer, REFRESHRATE); 
 	}
 
 }
