@@ -20,6 +20,8 @@ public:
 
 	void Update();
 
+	void Keyboard(unsigned char key, int x, int y);
+
 	void DrawScaline();
 
 	void DrawIsosceles();
@@ -30,8 +32,12 @@ public:
 
 	void DrawObtuse();
 
+
 private:
+	
 	float rotation;
+
+	float spinDirection = 1;
 
 };
 
