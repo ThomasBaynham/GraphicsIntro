@@ -1,19 +1,2 @@
 ﻿  HelloGL.cpp
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(75,18): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(76,19): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(76,14): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(77,20): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(77,14): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(94,21): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(94,15): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(95,20): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(95,14): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(110,18): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(111,20): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(112,19): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(142,15): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(143,21): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(143,15): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(144,20): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(144,14): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-  firstGL.vcxproj -> C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe
+  firstGL.vcxproj -> C:\Users\b017722n.STUDENT\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe
