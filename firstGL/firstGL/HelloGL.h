@@ -15,7 +15,13 @@ struct Camera {
 	Vector3 eye, center, up;
 };
 
+struct Colour {
+	GLfloat r, g, b;
+};
 
+struct Vertex {
+	GLfloat x, y, z;
+};
 
 class HelloGL
 {
@@ -31,17 +37,21 @@ public:
 
 	void Keyboard(unsigned char key, int x, int y);
 
-	void DrawShape();
+	void drawCubeArray();
 
-	void DrawScaline();/*
+	void drawCube();
 
-	void DrawIsosceles();
+	//void DrawShape();
 
-	void DrawEqualatral();
+	//void DrawScaline();
 
-	void DrawRight();
+	//void DrawIsosceles();
 
-	void DrawObtuse();*/
+	//void DrawEqualatral();
+
+	//void DrawRight();
+
+	//void DrawObtuse();
 
 
 private:
@@ -49,6 +59,10 @@ private:
 	float rotation;
 
 	float spinDirection = 1;
+	
+	static Vertex Verticies[];
 
+	static Colour Colours[];
+fff
 };
 

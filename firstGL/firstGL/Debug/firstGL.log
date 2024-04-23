@@ -1,2 +1,6 @@
-﻿  HelloGL.cpp
-  firstGL.vcxproj -> C:\Users\b017722n.STUDENT\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe
+﻿  GLUTCallbacks.cpp
+  HelloGL.cpp
+C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(112,23): warning C4305: '+=': truncation from 'double' to 'float'
+  main.cpp
+  Generating Code...
+  firstGL.vcxproj -> C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe
