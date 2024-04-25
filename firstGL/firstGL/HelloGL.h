@@ -1,27 +1,14 @@
 #pragma once
-#include "Windows.h"
-#include "gl/GL.h"
-#include "gl/GLU.h"
+#include <Windows.h>
+#include <gl/GL.h>
+#include <gl/GLU.h>
 #include "GL\freeglut.h"
 #include "GLUTCallbacks.h"
+#include "structures.h"
 
 #define REFRESHRATE 16
 
-struct Vector3 {
-	float x, y, z;
-};
 
-struct Camera {
-	Vector3 eye, center, up;
-};
-
-struct Colour {
-	GLfloat r, g, b;
-};
-
-struct Vertex {
-	GLfloat x, y, z;
-};
 
 class HelloGL
 {
@@ -63,6 +50,6 @@ private:
 	static Vertex Verticies[];
 
 	static Colour Colours[];
-fff
+
 };
 

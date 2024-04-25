@@ -3,4 +3,5 @@
 C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(112,23): warning C4305: '+=': truncation from 'double' to 'float'
   main.cpp
   Generating Code...
+  LINK : C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe not found or not built by the last incremental link; performing full link
   firstGL.vcxproj -> C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe
