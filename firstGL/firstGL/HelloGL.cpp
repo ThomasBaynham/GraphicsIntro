@@ -1,6 +1,8 @@
 #include "HelloGL.h"
 #include <iostream>
 
+#include "Cube.h"
+
 Vertex HelloGL::Verticies[] = { 1, 1, 1, -1, 1, 1, -1,-1, 1, // v0-v1-v2 (front)
 -1,-1, 1, 1,-1, 1, 1, 1, 1, // v2-v3-v0
 1, 1, 1, 1,-1, 1, 1,-1,-1, // v0-v3-v4 (right)
@@ -29,6 +31,8 @@ Colour HelloGL::Colours[] = { 1, 1, 1, 1, 1, 0, 1, 0, 0, // v0-v1-v2 (front)
 
 Camera* camera;
 
+Cube* cube;
+
 HelloGL::HelloGL(int argc, char* argv[]) 
 {
 	rotation = 0.0f;
@@ -48,6 +52,8 @@ HelloGL::HelloGL(int argc, char* argv[])
 	camera->center.x = 0.0f; camera->center.y = 0.0f; camera->center.z = 0.0f;
 	camera->up.x = 0.0f; camera->up.y = 1.0f; camera->up.z = 0.0f;
 
+	cube = new Cube();
+
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	
@@ -66,7 +72,11 @@ void HelloGL::Display()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	drawCubeArray();
+	
+	cube->Draw();
+
+
+	//drawCubeArray();
 	//DrawScaline();
 	//DrawIsosceles();
 	//DrawEqualatral();
@@ -99,6 +109,8 @@ void HelloGL::Update()
 	}
 	//camera->eye.z++;
 
+	cube->Update();
+
 	Sleep(10);
 
 }
@@ -113,126 +125,126 @@ void HelloGL::Keyboard(unsigned char key, int x, int y)
 	}
 }
 
-void HelloGL::drawCubeArray()
-{
-	glPushMatrix();
-
-	glBegin(GL_TRIANGLES);
-	for (int i = 0; i < 36; i++) {
-
-		glColor3f(Colours[i].r, Colours[i].g, Colours[i].b);
-		glVertex3f(Verticies[i].x, Verticies[i].y, Verticies[i].z);
-	}
-	glEnd();
-
-	glPopMatrix();
-}
-
-void HelloGL::drawCube()
-{
-	
-	glBegin(GL_TRIANGLES);
-	{
-		// face v0-v1-v2
-		glColor3f(1, 1, 1);
-		glVertex3f(1, 1, 1);
-		glColor3f(1, 1, 0);
-		glVertex3f(-1, 1, 1);
-		glColor3f(1, 0, 0);
-		glVertex3f(-1, -1, 1);
-
-		// face v2-v3-v0
-		glColor3f(1, 0, 0);
-		glVertex3f(-1, -1, 1);
-		glColor3f(1, 0, 1);
-		glVertex3f(1, -1, 1);
-		glColor3f(1, 1, 1);
-		glVertex3f(1, 1, 1);
-
-		// face v0-v3-v4
-		glColor3f(1, 1, 1);
-		glVertex3f(1, 1, 1);
-		glColor3f(1, 0, 1);
-		glVertex3f(1, -1, 1);
-		glColor3f(0, 0, 1);
-		glVertex3f(1, -1, -1);
-
-		// face v4-v5-v0
-		glColor3f(0, 0, 1);
-		glVertex3f(1, -1, -1);
-		glColor3f(0, 1, 1);
-		glVertex3f(1, 1, -1);
-		glColor3f(1, 1, 1);
-		glVertex3f(1, 1, 1);
-
-		// face v0-v5-v6
-		glColor3f(1, 1, 1);
-		glVertex3f(1, 1, 1);
-		glColor3f(0, 1, 1);
-		glVertex3f(1, 1, -1);
-		glColor3f(0, 1, 0);
-		glVertex3f(-1, 1, -1);
-
-		// face v6-v1-v0
-		glColor3f(0, 1, 0);
-		glVertex3f(-1, 1, -1);
-		glColor3f(1, 1, 0);
-		glVertex3f(-1, 1, 1);
-		glColor3f(1, 1, 1);
-		glVertex3f(1, 1, 1);
-
-		// face v1-v6-v7
-		glColor3f(1, 1, 0);
-		glVertex3f(-1, 1, 1);
-		glColor3f(0, 1, 0);
-		glVertex3f(-1, 1, -1);
-		glColor3f(0, 0, 0);
-		glVertex3f(-1, -1, -1);
-
-		// face v7-v2-v1
-		glColor3f(0, 0, 0);
-		glVertex3f(-1, -1, -1);
-		glColor3f(1, 0, 0);
-		glVertex3f(-1, -1, 1);
-		glColor3f(1, 1, 0);
-		glVertex3f(-1, 1, 1);
-
-		// face v7-v4-v3
-		glColor3f(0, 0, 0);
-		glVertex3f(-1, -1, -1);
-		glColor3f(0, 0, 1);
-		glVertex3f(1, -1, -1);
-		glColor3f(1, 0, 1);
-		glVertex3f(1, -1, 1);
-
-		// face v3-v2-v7
-		glColor3f(1, 0, 1);
-		glVertex3f(1, -1, 1);
-		glColor3f(1, 0, 0);
-		glVertex3f(-1, -1, 1);
-		glColor3f(0, 0, 0);
-		glVertex3f(-1, -1, -1);
-
-		// face v4-v7-v6
-		glColor3f(0, 0, 1);
-		glVertex3f(1, -1, -1);
-		glColor3f(0, 0, 0);
-		glVertex3f(-1, -1, -1);
-		glColor3f(0, 1, 0);
-		glVertex3f(-1, 1, -1);
-
-		// face v6-v5-v4
-		glColor3f(0, 1, 0);
-		glVertex3f(-1, 1, -1);
-		glColor3f(0, 1, 1);
-		glVertex3f(1, 1, -1);
-		glColor3f(0, 0, 1);
-		glVertex3f(1, -1, -1);
-
-		glEnd();
-	}
-
-}
+//void HelloGL::drawCubeArray()
+//{
+//	glPushMatrix();
+//
+//	glBegin(GL_TRIANGLES);
+//	for (int i = 0; i < 36; i++) {
+//
+//		glColor3f(Colours[i].r, Colours[i].g, Colours[i].b);
+//		glVertex3f(Verticies[i].x, Verticies[i].y, Verticies[i].z);
+//	}
+//	glEnd();
+//
+//	glPopMatrix();
+//}
+//
+//void HelloGL::drawCube()
+//{
+//	
+//	glBegin(GL_TRIANGLES);
+//	{
+//		// face v0-v1-v2
+//		glColor3f(1, 1, 1);
+//		glVertex3f(1, 1, 1);
+//		glColor3f(1, 1, 0);
+//		glVertex3f(-1, 1, 1);
+//		glColor3f(1, 0, 0);
+//		glVertex3f(-1, -1, 1);
+//
+//		// face v2-v3-v0
+//		glColor3f(1, 0, 0);
+//		glVertex3f(-1, -1, 1);
+//		glColor3f(1, 0, 1);
+//		glVertex3f(1, -1, 1);
+//		glColor3f(1, 1, 1);
+//		glVertex3f(1, 1, 1);
+//
+//		// face v0-v3-v4
+//		glColor3f(1, 1, 1);
+//		glVertex3f(1, 1, 1);
+//		glColor3f(1, 0, 1);
+//		glVertex3f(1, -1, 1);
+//		glColor3f(0, 0, 1);
+//		glVertex3f(1, -1, -1);
+//
+//		// face v4-v5-v0
+//		glColor3f(0, 0, 1);
+//		glVertex3f(1, -1, -1);
+//		glColor3f(0, 1, 1);
+//		glVertex3f(1, 1, -1);
+//		glColor3f(1, 1, 1);
+//		glVertex3f(1, 1, 1);
+//
+//		// face v0-v5-v6
+//		glColor3f(1, 1, 1);
+//		glVertex3f(1, 1, 1);
+//		glColor3f(0, 1, 1);
+//		glVertex3f(1, 1, -1);
+//		glColor3f(0, 1, 0);
+//		glVertex3f(-1, 1, -1);
+//
+//		// face v6-v1-v0
+//		glColor3f(0, 1, 0);
+//		glVertex3f(-1, 1, -1);
+//		glColor3f(1, 1, 0);
+//		glVertex3f(-1, 1, 1);
+//		glColor3f(1, 1, 1);
+//		glVertex3f(1, 1, 1);
+//
+//		// face v1-v6-v7
+//		glColor3f(1, 1, 0);
+//		glVertex3f(-1, 1, 1);
+//		glColor3f(0, 1, 0);
+//		glVertex3f(-1, 1, -1);
+//		glColor3f(0, 0, 0);
+//		glVertex3f(-1, -1, -1);
+//
+//		// face v7-v2-v1
+//		glColor3f(0, 0, 0);
+//		glVertex3f(-1, -1, -1);
+//		glColor3f(1, 0, 0);
+//		glVertex3f(-1, -1, 1);
+//		glColor3f(1, 1, 0);
+//		glVertex3f(-1, 1, 1);
+//
+//		// face v7-v4-v3
+//		glColor3f(0, 0, 0);
+//		glVertex3f(-1, -1, -1);
+//		glColor3f(0, 0, 1);
+//		glVertex3f(1, -1, -1);
+//		glColor3f(1, 0, 1);
+//		glVertex3f(1, -1, 1);
+//
+//		// face v3-v2-v7
+//		glColor3f(1, 0, 1);
+//		glVertex3f(1, -1, 1);
+//		glColor3f(1, 0, 0);
+//		glVertex3f(-1, -1, 1);
+//		glColor3f(0, 0, 0);
+//		glVertex3f(-1, -1, -1);
+//
+//		// face v4-v7-v6
+//		glColor3f(0, 0, 1);
+//		glVertex3f(1, -1, -1);
+//		glColor3f(0, 0, 0);
+//		glVertex3f(-1, -1, -1);
+//		glColor3f(0, 1, 0);
+//		glVertex3f(-1, 1, -1);
+//
+//		// face v6-v5-v4
+//		glColor3f(0, 1, 0);
+//		glVertex3f(-1, 1, -1);
+//		glColor3f(0, 1, 1);
+//		glVertex3f(1, 1, -1);
+//		glColor3f(0, 0, 1);
+//		glVertex3f(1, -1, -1);
+//
+//		glEnd();
+//	}
+//
+//}
 
 //void HelloGL::DrawShape() {
 //	glPushMatrix();

@@ -1,3 +1,2 @@
-﻿Cube.obj : error LNK2001: unresolved external symbol "private: static struct Vertex * Cube::Verticies" (?Verticies@Cube@@0PAUVertex@@A)
-Cube.obj : error LNK2001: unresolved external symbol "private: static struct Colour * Cube::Colours" (?Colours@Cube@@0PAUColour@@A)
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe : fatal error LNK1120: 2 unresolved externals
+﻿  Cube.cpp
+  firstGL.vcxproj -> C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe

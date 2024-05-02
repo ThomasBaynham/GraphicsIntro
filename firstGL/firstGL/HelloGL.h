@@ -5,6 +5,7 @@
 #include "GL\freeglut.h"
 #include "GLUTCallbacks.h"
 #include "structures.h"
+#include "Cube.h"
 
 #define REFRESHRATE 16
 
@@ -24,9 +25,9 @@ public:
 
 	void Keyboard(unsigned char key, int x, int y);
 
-	void drawCubeArray();
+	//void drawCubeArray();
 
-	void drawCube();
+	//void drawCube();
 
 	//void DrawShape();
 
