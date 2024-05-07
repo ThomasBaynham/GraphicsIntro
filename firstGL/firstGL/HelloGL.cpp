@@ -31,7 +31,7 @@ Colour HelloGL::Colours[] = { 1, 1, 1, 1, 1, 0, 1, 0, 0, // v0-v1-v2 (front)
 
 Camera* camera;
 
-Cube* cube;
+Cube* cube[200];
 
 HelloGL::HelloGL(int argc, char* argv[]) 
 {
@@ -49,11 +49,18 @@ HelloGL::HelloGL(int argc, char* argv[])
 	glutKeyboardFunc(GLUTCallbacks::keyboard);
 
 	camera = new Camera();
-	camera->eye.x = 5.0f; camera->eye.y = 5.0f; camera->eye.z = -5.0f;
+	camera->eye.x = -10.0f; camera->eye.y = 50.0f; camera->eye.z = 20.0f;
 	camera->center.x = 0.0f; camera->center.y = 0.0f; camera->center.z = 0.0f;
 	camera->up.x = 0.0f; camera->up.y = 1.0f; camera->up.z = 0.0f;
 
-	cube = new Cube(0,0,0);
+	//cube = new Cube(1,2,0);
+
+	
+	for (int i = 0; i < 200; i++) {
+		cube[i] = new Cube(((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
+	}
+
+
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -74,7 +81,11 @@ void HelloGL::Display()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	
-	cube->Draw();
+	//cube->Draw();
+
+	for (int i = 0; i < 200; i++) {
+		cube[i]->Draw();
+	}
 
 
 	//drawCubeArray();
@@ -110,7 +121,11 @@ void HelloGL::Update()
 	}
 	//camera->eye.z++;
 
-	cube->Update();
+	//cube->Update();
+
+	for (int i = 0; i < 200; i++) {
+		cube[i]->Update();
+	}
 
 	Sleep(10);
 

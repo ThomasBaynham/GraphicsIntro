@@ -36,7 +36,7 @@ void Cube::Draw()
 {
 	glPushMatrix();
 
-	glTranslatef(0,0,0);
+	glTranslatef(_position.x, _position.y, _position.z);
 
 	glRotatef(_rotation, 0.5f, 1.0f, 0.2f);
 
@@ -63,5 +63,5 @@ void Cube::Update()
 		_rotation += 4.0f;
 	}
 
-	std::cout << _rotation << "\n";
+	//std::cout << _rotation << "\n";
 }
