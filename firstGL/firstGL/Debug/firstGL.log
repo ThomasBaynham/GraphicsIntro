@@ -1,2 +1,1 @@
-﻿  Cube.cpp
-  firstGL.vcxproj -> C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe
+﻿LINK : fatal error LNK1104: cannot open file 'C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe'

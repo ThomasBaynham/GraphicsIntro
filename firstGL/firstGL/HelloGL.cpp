@@ -38,12 +38,13 @@ HelloGL::HelloGL(int argc, char* argv[])
 	rotation = 0.0f;
 	GLUTCallbacks::Init(this);
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
 	glutInitWindowSize(800, 800);
 	glutInitWindowPosition(100, 100);
-	glutCreateWindow("OPENPL WOOOOOOOOOOOOOO");
+	glutCreateWindow("CUBE GAMING");
 	glutDisplayFunc(GLUTCallbacks::Display);
 	glutTimerFunc(REFRESHRATE, GLUTCallbacks::Timer, REFRESHRATE);
+	glEnable(GL_DEPTH_TEST);
 
 	glutKeyboardFunc(GLUTCallbacks::keyboard);
 
@@ -52,7 +53,7 @@ HelloGL::HelloGL(int argc, char* argv[])
 	camera->center.x = 0.0f; camera->center.y = 0.0f; camera->center.z = 0.0f;
 	camera->up.x = 0.0f; camera->up.y = 1.0f; camera->up.z = 0.0f;
 
-	cube = new Cube();
+	cube = new Cube(0,0,0);
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -70,7 +71,7 @@ HelloGL::HelloGL(int argc, char* argv[])
 
 void HelloGL::Display() 
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	
 	cube->Draw();

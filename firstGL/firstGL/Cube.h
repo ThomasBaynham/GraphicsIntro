@@ -12,10 +12,11 @@ private:
 	static Colour indexedColours[];
 	static GLushort indicies[];
 
+	Vector3 _position;
 	GLfloat _rotation;
 
 public:
-	Cube();
+	Cube(float x, float y, float z);
 	~Cube();
 
 	void Draw();

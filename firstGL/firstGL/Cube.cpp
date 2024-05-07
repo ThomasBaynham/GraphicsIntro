@@ -19,8 +19,11 @@ GLushort Cube::indicies[] = { 0, 1, 2, 2, 3, 0, // front
 7, 4, 3, 3, 2, 7, // bottom
 4, 7, 6, 6, 5, 4 }; // back
 
-Cube::Cube()
+Cube::Cube(float x, float y, float z)
 {
+	_position.x = x;
+	_position.y = y;
+	_position.z = z;
 	_rotation = 0;
 }
 
@@ -32,6 +35,8 @@ Cube::~Cube()
 void Cube::Draw()
 {
 	glPushMatrix();
+
+	glTranslatef(0,0,0);
 
 	glRotatef(_rotation, 0.5f, 1.0f, 0.2f);
 
