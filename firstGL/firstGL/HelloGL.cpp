@@ -31,6 +31,7 @@ Colour HelloGL::Colours[] = { 1, 1, 1, 1, 1, 0, 1, 0, 0, // v0-v1-v2 (front)
 
 Camera* camera;
 
+//Cube* cube;
 Cube* cube[200];
 
 HelloGL::HelloGL(int argc, char* argv[]) 
@@ -53,7 +54,7 @@ HelloGL::HelloGL(int argc, char* argv[])
 	camera->center.x = 0.0f; camera->center.y = 0.0f; camera->center.z = 0.0f;
 	camera->up.x = 0.0f; camera->up.y = 1.0f; camera->up.z = 0.0f;
 
-	//cube = new Cube(1,2,0);
+	//cube = new Cube(0,0,0);
 
 	
 	for (int i = 0; i < 200; i++) {

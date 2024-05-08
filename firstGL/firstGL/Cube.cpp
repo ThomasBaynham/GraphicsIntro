@@ -25,6 +25,12 @@ Cube::Cube(float x, float y, float z)
 	_position.y = y;
 	_position.z = z;
 	_rotation = 0;
+
+	rotations.x = ((float)rand() / RAND_MAX) * 2 - 1;
+	rotations.y = ((float)rand() / RAND_MAX) * 2 - 1;
+	rotations.z = ((float)rand() / RAND_MAX) * 2 - 1;
+
+	std::cout << rotations.x << " " << rotations.y << " " << rotations.z << "\n";
 }
 
 Cube::~Cube()
@@ -38,7 +44,7 @@ void Cube::Draw()
 
 	glTranslatef(_position.x, _position.y, _position.z);
 
-	glRotatef(_rotation, 0.5f, 1.0f, 0.2f);
+	glRotatef(_rotation, rotations.x, rotations.y, rotations.z);
 
 	glBegin(GL_TRIANGLES);
 	for (int i = 0; i < 36; i++) {
@@ -60,8 +66,9 @@ void Cube::Update()
 	}
 	else {
 
-		_rotation += 4.0f;
+		_rotation += 10.0f;
 	}
 
 	//std::cout << _rotation << "\n";
+	
 }

@@ -15,6 +15,8 @@ private:
 	Vector3 _position;
 	GLfloat _rotation;
 
+	Vector3 rotations;
+
 public:
 	Cube(float x, float y, float z);
 	~Cube();

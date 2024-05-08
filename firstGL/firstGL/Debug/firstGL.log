@@ -1,3 +1,2 @@
-﻿  HelloGL.cpp
-C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\firstGL\HelloGL.cpp(140,23): warning C4305: '+=': truncation from 'double' to 'float'
+﻿  Cube.cpp
   firstGL.vcxproj -> C:\Users\b017722n\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe
