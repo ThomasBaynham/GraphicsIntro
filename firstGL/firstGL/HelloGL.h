@@ -27,19 +27,7 @@ public:
 
 	//void drawCubeArray();
 
-	//void drawCube();
 
-	//void DrawShape();
-
-	//void DrawScaline();
-
-	//void DrawIsosceles();
-
-	//void DrawEqualatral();
-
-	//void DrawRight();
-
-	//void DrawObtuse();
 
 
 private:

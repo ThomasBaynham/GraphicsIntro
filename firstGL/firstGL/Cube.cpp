@@ -1,5 +1,6 @@
 #include "Cube.h"
 #include <iostream>
+#include <fstream>
 
 //Vertex Cube::indexedVerticies[] = { 1, 1, 1, -1, 1, 1, // v0,v1,
 //-1,-1, 1, 1,-1, 1, // v2,v3
@@ -80,4 +81,42 @@ void Cube::Update()
 
 	//std::cout << _rotation << "\n";
 	
+}
+
+bool Cube::Load(char* path)
+{
+	std::ifstream inFile;
+	inFile.open(path);
+	if (!inFile.good()) {
+		std::cerr << "Cant open text file" << path << "\n";
+		return false;
+	}
+
+	inFile >> numVertices;
+	indexedVerticies = new Vertex[numVertices];
+	for (int i = 0; i < numVertices; i++) {
+
+		inFile >> indexedVerticies[i].x;
+		inFile >> indexedVerticies[i].y;
+		inFile >> indexedVerticies[i].z;
+		
+	}
+	inFile >> numColours;
+	indexedColours = new Colour[numColours];
+	for (int i = 0; i < numColours; i++) {
+
+		inFile >> indexedColours[i].r;
+		inFile >> indexedColours[i].g;
+		inFile >> indexedColours[i].b;
+
+	}
+	inFile >> numIndecies;
+	indicies = new GLushort[numIndecies];
+	for (int i = 0; i < numIndecies; i++) {
+		inFile >> indicies[i];
+	}
+
+	inFile.close();
+
+	return true;
 }

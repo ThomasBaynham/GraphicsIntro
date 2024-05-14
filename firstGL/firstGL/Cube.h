@@ -25,5 +25,7 @@ public:
 
 	void Draw();
 	void Update();
+
+	static bool Load(char* path);
 };
 
