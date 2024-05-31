@@ -36,19 +36,7 @@ Cube* cube[200];
 
 HelloGL::HelloGL(int argc, char* argv[]) 
 {
-	InitGL(argc, argv);
-	InitObjects();
-	glutMainLoop();
-
-}
-
-HelloGL::~HelloGL(void)
-{
-
-}
-
-void HelloGL::InitGL(int argc, char* argv[])
-{
+	rotation = 0.0f;
 	GLUTCallbacks::Init(this);
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
@@ -61,44 +49,40 @@ void HelloGL::InitGL(int argc, char* argv[])
 
 	glutKeyboardFunc(GLUTCallbacks::keyboard);
 
+	camera = new Camera();
+	camera->eye.x = -10.0f; camera->eye.y = 50.0f; camera->eye.z = 20.0f;
+	camera->center.x = 0.0f; camera->center.y = 0.0f; camera->center.z = 0.0f;
+	camera->up.x = 0.0f; camera->up.y = 1.0f; camera->up.z = 0.0f;
+
+	//Cube::Load((char*)"Objects/cube.txt");
+	Mesh* cubeMesh = MeshLoader::Load((char*)"Objects/cube.txt");
+
+	//cube = new Cube(0,0,0);
+	
+	for (int i = 0; i < 200; i++) {
+		cube[i] = new Cube(cubeMesh,((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
+	}
+
+
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-
+	
 	glViewport(0, 0, 800, 800);
-	gluPerspective(45, 1, 1, 1000);
+	gluPerspective(45, 1, 1, 1000 ); 
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
-	glutInitWindowSize(800, 800);
+	glutMainLoop();
+	glutInitWindowSize(800,800);
 }
 
-void HelloGL::InitObjects()
-{
-	camera = new Camera();
-	camera->eye.x = 0.0f; camera->eye.y = 10.0f; camera->eye.z = 20.0f;
-	camera->center.x = 0.0f; camera->center.y = 0.0f; camera->center.z = 0.0f;
-	camera->up.x = 0.0f; camera->up.y = 1.0f; camera->up.z = 0.0f;
-
-	rotation = 0.0f;
-
-	//Cube::Load((char*)"Objects/cube.txt");
-
-	Mesh* cubeMesh = MeshLoader::Load((char*)"Objects/cube.txt");
-
-	//cube = new Cube(0,0,0);
-
-	for (int i = 0; i < 200; i++) {
-		cube[i] = new Cube(cubeMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
-	}
-}
-
-void HelloGL::Display()
+void HelloGL::Display() 
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
+	
 	//cube->Draw();
 
 	for (int i = 0; i < 200; i++) {
@@ -114,10 +98,15 @@ void HelloGL::Display()
 	//DrawObtuse();
 	//DrawShape();
 
-
+	
 
 	glFlush();
 	glutSwapBuffers();
+
+}
+
+HelloGL::~HelloGL(void)
+{
 
 }
 
@@ -152,39 +141,11 @@ void HelloGL::Update()
 
 void HelloGL::Keyboard(unsigned char key, int x, int y)
 {
-	
 	if (key == 'd') {
 		spinDirection = spinDirection * -1;
 	}
-	else if (key == 'r') {
-		direction = direction * -1;
-	}
-	else if (key == 'q') {
-		camera->eye.x += 5 * direction;
-	}
-	else if (key == 'w') {
-		camera->eye.y += 5 * direction;
-	}
-	else if (key == 'e') {
-		camera->eye.z += 5 * direction;
-	}
-	else if (key == 'a') {
-		camera->center.x += 5 * direction;
-	}
-	else if (key == 's') {
-		camera->center.y += 5 * direction;
-	}
-	else if (key == 'd') {
-		camera->center.z += 5 * direction;
-	}
-	else if (key == 'z') {
-		camera->up.x += 5 * direction;
-	}
-	else if (key == 'x') {
-		camera->up.y += 5 * direction;
-	}
-	else if (key == 'c') {
-		camera->up.z += 5 * direction;
+	else if (key == 'f') {
+		camera->eye.y += 0.1;
 	}
 }
 

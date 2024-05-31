@@ -21,6 +21,6 @@ struct Vertex {
 struct Mesh {
 	Vertex* Vertices;
 	Colour* Colours;
-	GLushort* Indices;
+	GLushort* Indecies;
 	int VertexCount, ColourCount, IndexCount;
 };

@@ -26,9 +26,6 @@ namespace MeshLoader
 				inFile >> mesh.Vertices[i].z;
 			}
 		}
-
-
-
 	}
 
 	void LoadColours(ifstream& inFile, Mesh& mesh)
@@ -48,18 +45,20 @@ namespace MeshLoader
 		}
 	}
 
+	
+
 	void LoadIndices(ifstream& inFile, Mesh& mesh)
 	{
 		inFile >> mesh.IndexCount;
 
-		for (mesh.IndexCount > 0) {
-			mesh.Indices = new GLushort[mesh.IndexCount];
+		if (mesh.IndexCount > 0)
+		{
+			mesh.Indecies = new GLushort[mesh.IndexCount];
 
-			for (int i = 0; i < mesh.IndexCount; i++) {
-				inFile >> mesh.Indices;
+			for (int i = 0; i < mesh.IndexCount; i++)
+			{
+				inFile >> mesh.Indecies[i];
 			}
-
-
 		}
 	}
 
@@ -77,7 +76,9 @@ namespace MeshLoader
 			return nullptr;
 		}
 
-		//LOAD DATA USING METHODS ABOVE
+		LoadVertices(inFile, *mesh);
+		LoadColours(inFile, *mesh);
+		LoadIndices(inFile, *mesh);
 
 		return mesh;
 	}

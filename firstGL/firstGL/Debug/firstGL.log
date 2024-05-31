@@ -1,7 +1,2 @@
 ﻿  Cube.cpp
-  GLUTCallbacks.cpp
-  HelloGL.cpp
-  main.cpp
-  Generating Code...
-HelloGL.obj : error LNK2019: unresolved external symbol "struct Mesh * __cdecl MeshLoader::Load(char *)" (?Load@MeshLoader@@YAPAUMesh@@PAD@Z) referenced in function "public: void __thiscall HelloGL::InitObjects(void)" (?InitObjects@HelloGL@@QAEXXZ)
-C:\Users\b017722n.STUDENT.003\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe : fatal error LNK1120: 1 unresolved externals
+  firstGL.vcxproj -> C:\Users\b017722n.STUDENT.003\Documents\GitHub\GraphicsIntro\firstGL\Debug\firstGL.exe

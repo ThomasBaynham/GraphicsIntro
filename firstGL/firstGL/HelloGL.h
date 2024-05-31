@@ -17,14 +17,18 @@ class HelloGL
 public:
 	
 	HelloGL(int argc, char* argv[]);
-	~HelloGL(void);
-	void InitObjects();
-	void InitGL(int argc, char* argv[]);
+
 	void Display();
+
+	~HelloGL(void);
+
 	void Update();
+
 	void Keyboard(unsigned char key, int x, int y);
+
 	//void drawCubeArray();
-	
+
+
 
 
 private:
@@ -37,6 +41,5 @@ private:
 
 	static Colour Colours[];
 
-	int direction = 1;
 };
 
